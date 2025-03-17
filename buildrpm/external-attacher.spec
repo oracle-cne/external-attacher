@@ -7,7 +7,7 @@
 %global app_name                external-attacher
 %global app_name_release        csi-attacher
 %global app_version             4.8.1
-%global oracle_release_version  1
+%global oracle_release_version  2
 %global _buildhost              build-ol%{?oraclelinux}-%{?_arch}.oracle.com
 
 Name:           %{app_name}
@@ -38,6 +38,9 @@ install -m 755 bin/%{app_name_release} %{buildroot}/%{app_name_release}
 /%{app_name_release}
 
 %changelog
+* Mon Mar 17 2025 Michael Gianatassio <michael.gianatassio@oracle.com> - 4.8.1-2
+- Rename the container image to be csi-attacher.
+
 * Tue Mar 11 2025 Michael Gianatassio <michael.gianatassio@oracle.com> - 4.8.1-1
 - Added Oracle specific build files for CSI external-attacher.
 
