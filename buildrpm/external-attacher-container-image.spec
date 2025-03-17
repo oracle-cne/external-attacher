@@ -10,6 +10,7 @@
 %global app_version             {{{$version}}}
 %global oracle_release_version  1
 %global _buildhost              build-ol%{?oraclelinux}-%{?_arch}.oracle.com
+%global image_name	            csi-attacher
 
 Name:           %{app_name}-container-image
 Version:        %{app_version}
@@ -28,7 +29,7 @@ Sidecar container that attaches volumes to nodes by calling ControllerPublish an
 
 %build
 %global rpm_name %{app_name}-%{version}-%{release}.%{_build_arch}
-%global docker_image container-registry.oracle.com/olcne/%{app_name}:v%{version}
+%global docker_image container-registry.oracle.com/olcne/%{image_name}:v%{version}
 
 yum clean all
 yumdownloader --destdir=${PWD}/rpms %{rpm_name}
