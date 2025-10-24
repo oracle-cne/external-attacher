@@ -22,12 +22,14 @@ Url:            https://github.com/oracle-cne/external-attacher.git
 Source:         %{name}-%{version}.tar.bz2
 BuildRequires:  golang
 BuildRequires:	make
+Patch0:         build.make.patch
 
 %description
 Sidecar container that attaches volumes to nodes by calling ControllerPublish and ControllerUnpublish functions of CSI drivers.
 
 %prep
 %setup -q
+%patch0
 
 %build
 make build
